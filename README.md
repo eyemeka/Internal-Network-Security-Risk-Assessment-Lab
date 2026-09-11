@@ -1,4 +1,4 @@
-# Internal Network Security & Risk Assessment Lab #
+# Internal Network Vulnerability Assessment & Risk Management | Windows 11 #
 
 # <h2>1. Project Overview</h2> #
 This project involved conducting an internal network security and risk assessment of a Windows 11 workstation in an isolated virtual lab environment.
