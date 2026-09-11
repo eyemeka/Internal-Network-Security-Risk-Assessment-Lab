@@ -194,8 +194,9 @@ These services represent part of the workstation's network attack surface.
 After the firewall was restored, a focused scan showed these ports as filtered, demonstrating that the Windows Firewall was restricting network access.
 <pre><code class="language-bash">sudo nmap -sV -p 135,139,445 192.168.56.20
 </code></pre>
+
 <strong>Screenshot:</strong>
-![image alt](https://github.com/eyemeka/ScreenShots/blob/315b538b66201a667f9b6e13fc34ae46306787eb/Screenshot%202026-09-10%20104639.png)
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20154324.png?raw=true)
 
 ## <h2>8. Security Control Validation</h2> ##
 
@@ -206,6 +207,8 @@ The firewall was also observed filtering Windows RPC, NetBIOS, and SMB ports dur
 
 This demonstrates that the firewall provides a network-level control that reduces exposure of these services.<code></code>
 
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20160635.png?raw=true)
+
 ### <h3>8.2 SMB Configuration</h3> ###
 The Windows SMB configuration was reviewed to determine which SMB protocols were enabled.
 
@@ -214,12 +217,15 @@ The result showed:
  	<li>SMBv1: Disabled</li>
  	<li>SMBv2: Enabled</li>
 </ul>
+
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20155908.png?raw=true)
+
 SMBv1 being disabled is a positive security control because the legacy protocol is not required for normal modern Windows operation.<code></code>
 
 A focused Nmap SMB protocol check also showed TCP/445 as filtered while the firewall was enabled.
 
 <strong>Screenshot:</strong>
-<code><img class="alignnone size-full wp-image-383" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-105628.png" alt="" width="650" height="342" /></code>
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20154809.png?raw=true)
 
 ## <h2>9. Vulnerability Assessment</h2> ##
 
@@ -235,8 +241,8 @@ No severity-rated vulnerabilities were identified during this initial scan.
 This demonstrated the difference between a network-based unauthenticated assessment and a credentialed Windows assessment.
 
 <strong>Screenshot:</strong>
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20152926.png?raw=true)
 
-<img class="alignnone wp-image-374 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-152926-1024x394.png" alt="" width="640" height="246" />
 
 ### <h3>9.2 Authenticated Nessus Assessment</h3> ###
 A separate authenticated Nessus assessment was configured for the Windows 11 workstation.
@@ -248,8 +254,7 @@ The Windows system was also configured to support the required credentialed asse
 The authenticated scan provided substantially greater host visibility and identified multiple severity-rated vulnerabilities that were not visible during the initial unauthenticated assessment.
 
 <strong>Screenshot:</strong>
-
-<img class="alignnone wp-image-375 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-214009-1024x424.png" alt="" width="640" height="265" />
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20214009.png?raw=true)
 
 ### <h3>9.3 Key Vulnerabilities Identified</h3> ###
 The authenticated Nessus assessment identified vulnerabilities across the Windows operating system and installed applications.
@@ -262,8 +267,7 @@ Nessus identified multiple Firefox vulnerabilities and reported the grouped find
 This represents one of the most significant risks identified during the assessment.
 
 <strong>Screenshot:</strong>
-
-<img class="alignnone wp-image-376 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-220808-1024x454.png" alt="" width="640" height="284" />
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20220808.png?raw=true)
 
 #### <h4>VLC Media Player</h4> ####
 The workstation also contained <strong>VLC Media Player 2.2.1</strong>.
@@ -278,8 +282,7 @@ Nessus identified missing Microsoft security updates affecting the Windows 11 wo
 The Microsoft bulletin findings included Critical vulnerabilities with CVSS scores reported as high as <strong>9.8</strong>, along with additional High and Medium severity findings.
 
 <strong>Screenshot:</strong>
-
-<img class="alignnone wp-image-377 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-220828-1024x484.png" alt="" width="640" height="303" />
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20220828.png?raw=true)
 
 ### <h3>Microsoft .NET Framework</h3> ###
 Nessus identified missing security updates affecting Microsoft .NET Framework components installed on the workstation.
@@ -298,7 +301,7 @@ Additional Medium and Low findings included Windows Package Manager, Windows Def
 The ICMP timestamp finding was reported with a <strong>CVSS score of 2.1 and Low severity</strong>.
 
 ## <h2>Top Vulnerabilities Found</h2> ##
-<img class="alignnone wp-image-378 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-230817-1024x601.png" alt="" width="640" height="376" />
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20220746.png?raw=true)
 
 ### <h3>9.4 Vulnerability Severity Summary</h3> ###
 The authenticated assessment produced the following severity distribution shown in Nessus:
@@ -331,8 +334,7 @@ The authenticated assessment produced the following severity distribution shown 
 The findings were not treated as 482 individual vulnerabilities. Informational and discovery plugins were separated from severity-rated vulnerabilities, and grouped application findings such as the Firefox multiple-vulnerability finding were treated as individual assessment findings rather than as hundreds of separate risks.
 
 <strong>Screenshot:</strong>
-
-<img class="alignnone wp-image-379 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-214009-1-1024x424.png" alt="" width="640" height="265" />
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20214009.png?raw=true)
 
 ## <h2>10. Risk Assessment</h2> ##
 The identified findings were assessed using a qualitative 5 × 5 likelihood and impact model.
