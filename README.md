@@ -103,7 +103,8 @@ A separate Host-Only network was used to provide the Nessus scanning path to the
 </tbody>
 </table>
 Nessus Essentials was running on the Windows host and accessed through the Nessus web interface.<code></code>
-<h2>5. Network Architecture</h2>
+
+## <h2>5. Network Architecture</h2> ##
 The laboratory environment was designed to isolate the assessment from the external network.
 
 Kali Linux was used as the security assessment workstation for Nmap-based discovery and enumeration.
@@ -111,7 +112,8 @@ Kali Linux was used as the security assessment workstation for Nmap-based discov
 The Windows 11 workstation was the primary assessment target.
 
 The Host-Only network provided connectivity between the Windows host, Kali Linux, and the Windows 11 target for vulnerability scanning.
-<h2>6. Asset Discovery and Inventory</h2>
+
+## <h2>6. Asset Discovery and Inventory</h2> ##
 The first assessment activity was network discovery using Nmap.
 
 The following command was used:
@@ -151,10 +153,10 @@ The Windows host was identified with a VirtualBox virtual network adapter.
 </tr>
 </tbody>
 </table>
-&nbsp;
 
 <img class="alignnone wp-image-373 size-full" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-102608.png" alt="" width="647" height="295" />
-<h2>7. Network and Service Enumeration</h2>
+
+## <h2>7. Network and Service Enumeration</h2> ##
 Nmap was used to examine the services exposed by the Windows 11 workstation.
 
 With the Windows Firewall temporarily disabled for assessment purposes, the following command was used:
@@ -195,14 +197,17 @@ After the firewall was restored, a focused scan showed these ports as filtered, 
 <strong>Screenshot:</strong>
 
 <img class="alignnone wp-image-381 size-full" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-154324.png" alt="" width="643" height="388" />
-<h2>8. Security Control Validation</h2>
-<h3>8.1 Windows Firewall</h3>
+
+## <h2>8. Security Control Validation</h2> ##
+
+### <h3>8.1 Windows Firewall</h3> ###
 Windows Firewall was confirmed as enabled across the Domain, Private, and Public profiles.
 
 The firewall was also observed filtering Windows RPC, NetBIOS, and SMB ports during normal operation.
 
 This demonstrates that the firewall provides a network-level control that reduces exposure of these services.<code></code>
-<h3>8.2 SMB Configuration</h3>
+
+### <h3>8.2 SMB Configuration</h3> ###
 The Windows SMB configuration was reviewed to determine which SMB protocols were enabled.
 
 The result showed:
@@ -216,8 +221,10 @@ A focused Nmap SMB protocol check also showed TCP/445 as filtered while the fire
 
 <strong>Screenshot:</strong>
 <code><img class="alignnone size-full wp-image-383" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-105628.png" alt="" width="650" height="342" /></code>
-<h2>9. Vulnerability Assessment</h2>
-<h3>9.1 Unauthenticated Nessus Assessment</h3>
+
+## <h2>9. Vulnerability Assessment</h2> ##
+
+### <h3>9.1 Unauthenticated Nessus Assessment</h3> ###
 An initial unauthenticated Nessus scan was performed against:
 
 <code>192.168.57.20</code>
@@ -231,7 +238,8 @@ This demonstrated the difference between a network-based unauthenticated assessm
 <strong>Screenshot:</strong>
 
 <img class="alignnone wp-image-374 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-152926-1024x394.png" alt="" width="640" height="246" />
-<h3>9.2 Authenticated Nessus Assessment</h3>
+
+### <h3>9.2 Authenticated Nessus Assessment</h3> ###
 A separate authenticated Nessus assessment was configured for the Windows 11 workstation.
 
 A dedicated local Windows assessment account was created with administrative privileges for the scan.
@@ -243,9 +251,11 @@ The authenticated scan provided substantially greater host visibility and identi
 <strong>Screenshot:</strong>
 
 <img class="alignnone wp-image-375 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-214009-1024x424.png" alt="" width="640" height="265" />
-<h3>9.3 Key Vulnerabilities Identified</h3>
+
+### <h3>9.3 Key Vulnerabilities Identified</h3> ###
 The authenticated Nessus assessment identified vulnerabilities across the Windows operating system and installed applications.
-<h4>Mozilla Firefox</h4>
+
+#### <h4>Mozilla Firefox</h4> ####
 The workstation contained <strong>Mozilla Firefox 2.0.0.11</strong>, an extremely outdated version.
 
 Nessus identified multiple Firefox vulnerabilities and reported the grouped finding with a <strong>CVSS score of 10.0 and Critical severity</strong>.
@@ -255,13 +265,15 @@ This represents one of the most significant risks identified during the assessme
 <strong>Screenshot:</strong>
 
 <img class="alignnone wp-image-376 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-220808-1024x454.png" alt="" width="640" height="284" />
-<h4>VLC Media Player</h4>
+
+#### <h4>VLC Media Player</h4> ####
 The workstation also contained <strong>VLC Media Player 2.2.1</strong>.
 
 Nessus identified multiple vulnerabilities associated with VLC versions below the secure version threshold identified by the plugin.
 
 The finding included Critical, High, and Medium severity results.
-<h4>Microsoft Windows Security Updates</h4>
+
+#### <h4>Microsoft Windows Security Updates</h4> ####
 Nessus identified missing Microsoft security updates affecting the Windows 11 workstation.
 
 The Microsoft bulletin findings included Critical vulnerabilities with CVSS scores reported as high as <strong>9.8</strong>, along with additional High and Medium severity findings.
@@ -269,21 +281,27 @@ The Microsoft bulletin findings included Critical vulnerabilities with CVSS scor
 <strong>Screenshot:</strong>
 
 <img class="alignnone wp-image-377 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-220828-1024x484.png" alt="" width="640" height="303" />
-<h3>Microsoft .NET Framework</h3>
+
+### <h3>Microsoft .NET Framework</h3> ###
 Nessus identified missing security updates affecting Microsoft .NET Framework components installed on the workstation.
 
 These findings included Critical and High severity results.
-<h3>Microsoft Teams</h3>
+
+### <h3>Microsoft Teams</h3> ###
 A High severity vulnerability affecting Microsoft Teams for Desktop was also identified.
-<h3>Windows Defender</h3>
+
+### <h3>Windows Defender</h3> ###
 Nessus identified issues relating to Windows Defender and antivirus signature definitions, including High and Low severity results.
-<h3>Lower-Severity Findings</h3>
+
+### <h3>Lower-Severity Findings</h3> ###
 Additional Medium and Low findings included Windows Package Manager, Windows Defender configuration, Windows speculative execution configuration, and ICMP timestamp information disclosure.
 
 The ICMP timestamp finding was reported with a <strong>CVSS score of 2.1 and Low severity</strong>.
-<h4>Top Vulnerabilities Found</h4>
+
+## <h2>Top Vulnerabilities Found</h2> ##
 <img class="alignnone wp-image-378 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-230817-1024x601.png" alt="" width="640" height="376" />
-<h3>9.4 Vulnerability Severity Summary</h3>
+
+### <h3>9.4 Vulnerability Severity Summary</h3> ###
 The authenticated assessment produced the following severity distribution shown in Nessus:
 <table>
 <thead>
@@ -316,7 +334,8 @@ The findings were not treated as 482 individual vulnerabilities. Informational a
 <strong>Screenshot:</strong>
 
 <img class="alignnone wp-image-379 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-214009-1-1024x424.png" alt="" width="640" height="265" />
-<h2>10. Risk Assessment</h2>
+
+## <h2>10. Risk Assessment</h2> ##
 The identified findings were assessed using a qualitative 5 × 5 likelihood and impact model.
 
 <strong>Risk Score = Likelihood × Impact</strong>
@@ -346,7 +365,8 @@ The identified findings were assessed using a qualitative 5 × 5 likelihood and 
 </tr>
 </tbody>
 </table>
-<h3>Risk Register</h3>
+
+### <h3>Risk Register</h3> ###
 <table>
 <thead>
 <tr>
@@ -418,7 +438,8 @@ The identified findings were assessed using a qualitative 5 × 5 likelihood and 
 </tbody>
 </table>
 The risk assessment prioritizes vulnerabilities that could have the greatest effect on the confidentiality, integrity, and availability of the workstation.
-<h2>11. Risk Treatment Plan</h2>
+
+## <h2>11. Risk Treatment Plan</h2> ##
 <table>
 <thead>
 <tr>
@@ -465,14 +486,16 @@ The risk assessment prioritizes vulnerabilities that could have the greatest eff
 </tr>
 </tbody>
 </table>
-<h3>Existing Controls to Maintain</h3>
+
+### <h3>Existing Controls to Maintain</h3> ###
 The following controls should remain enabled:
 <ul>
  	<li>Windows Firewall across all active profiles.</li>
  	<li>SMBv1 disabled.</li>
  	<li>Network access restricted to required systems and services.</li>
 </ul>
-<h2>12. Conclusion</h2>
+
+## <h2>12. Conclusion</h2> ##
 The internal network security and risk assessment identified significant vulnerabilities on the Windows 11 workstation.
 
 The authenticated Nessus assessment provided substantially greater visibility than the initial unauthenticated scan and I identified Critical, High, Medium, and Low severity findings.
@@ -482,7 +505,8 @@ The most significant issues were the presence of highly outdated third-party app
 Network enumeration also identified Windows RPC, NetBIOS, and SMB services. However, testing confirmed that the Windows Firewall was filtering these services during normal operation. SMBv1 was also confirmed to be disabled.
 
 The assessment demonstrates the importance of authenticated vulnerability scanning, software and patch management, network security controls, and risk-based prioritisation when assessing an internal Windows environment.
-<h2>Key Skills Demonstrated</h2>
+
+## <h2>Key Skills Demonstrated</h2> ##
 <ul>
  	<li>Vulnerability assessment</li>
  	<li>Authenticated vulnerability scanning,</li>
