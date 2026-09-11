@@ -188,15 +188,14 @@ The scan identified:
 These services represent part of the workstation's network attack surface.
 
 <strong>Screenshot:</strong>
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20104639.png?raw=true)
 
-<img class="alignnone wp-image-380 size-full" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-104639.png" alt="" width="644" height="432" />
 
 After the firewall was restored, a focused scan showed these ports as filtered, demonstrating that the Windows Firewall was restricting network access.
 <pre><code class="language-bash">sudo nmap -sV -p 135,139,445 192.168.56.20
 </code></pre>
 <strong>Screenshot:</strong>
-
-<img class="alignnone wp-image-381 size-full" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-154324.png" alt="" width="643" height="388" />
+![image alt](https://github.com/eyemeka/ScreenShots/blob/315b538b66201a667f9b6e13fc34ae46306787eb/Screenshot%202026-09-10%20104639.png)
 
 ## <h2>8. Security Control Validation</h2> ##
 
