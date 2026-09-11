@@ -1,6 +1,6 @@
-# Internal Network Security Risk Assessment Lab
+# Internal Network Security & Risk Assessment Lab #
 
-<h2>1. Project Overview</h2>
+# <h2>1. Project Overview</h2> #
 This project involved conducting an internal network security and risk assessment of a Windows 11 workstation in an isolated virtual lab environment.
 
 The assessment combined asset discovery, vulnerability scanning, network and service enumeration, security control validation, risk assessment, and risk treatment planning.
@@ -8,7 +8,8 @@ The assessment combined asset discovery, vulnerability scanning, network and ser
 The Windows 11 virtual machine was intentionally configured with outdated third-party software, including Mozilla Firefox 2.0.0.11 and VLC Media Player 2.2.1, to provide realistic vulnerability-assessment scenarios.
 
 The assessment was performed using Kali Linux, Nmap, and Tenable Nessus Essentials.
-<h2>2. Objectives</h2>
+
+# <h2>2. Objectives</h2> #
 The main objectives were to:
 <ul>
  	<li>Identify hosts within the internal network.</li>
@@ -20,7 +21,8 @@ The main objectives were to:
  	<li>Assess identified risks based on likelihood and impact.</li>
  	<li>Develop appropriate risk treatment recommendations</li>
 </ul>
-<h2>3. Tools Used</h2>
+
+## <h2>3. Tools Used</h2> ##
 <ul>
  	<li>VirtualBox</li>
  	<li>Kali Linux</li>
@@ -28,9 +30,10 @@ The main objectives were to:
  	<li>Tenable Nessus Essentials</li>
  	<li>Nmap</li>
 </ul>
-<h2>4. Scope and Lab Environment</h2>
+
+## <h2>4. Scope and Lab Environment</h2> ##
 The assessment was conducted in an isolated VirtualBox environment.
-<h3>In-Scope Assets</h3>
+### <h3>In-Scope Assets</h3> ###
 <table>
 <thead>
 <tr>
@@ -150,7 +153,7 @@ The Windows host was identified with a VirtualBox virtual network adapter.
 </table>
 &nbsp;
 
-[caption id="attachment_373" align="alignnone" width="647"]<img class="wp-image-373 size-full" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-102608.png" alt="" width="647" height="295" /> nmap-host-discovery-screenshot[/caption]
+<img class="alignnone wp-image-373 size-full" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-102608.png" alt="" width="647" height="295" />
 <h2>7. Network and Service Enumeration</h2>
 Nmap was used to examine the services exposed by the Windows 11 workstation.
 
@@ -184,14 +187,14 @@ These services represent part of the workstation's network attack surface.
 
 <strong>Screenshot:</strong>
 
-[caption id="attachment_380" align="alignnone" width="644"]<img class="size-full wp-image-380" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-104639.png" alt="" width="644" height="432" /> nmap-service-enumeration[/caption]
+<img class="alignnone wp-image-380 size-full" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-104639.png" alt="" width="644" height="432" />
 
 After the firewall was restored, a focused scan showed these ports as filtered, demonstrating that the Windows Firewall was restricting network access.
 <pre><code class="language-bash">sudo nmap -sV -p 135,139,445 192.168.56.20
 </code></pre>
 <strong>Screenshot:</strong>
 
-[caption id="attachment_381" align="alignnone" width="643"]<img class="size-full wp-image-381" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-154324.png" alt="" width="643" height="388" /> nmap-firewall-filtering[/caption]
+<img class="alignnone wp-image-381 size-full" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-154324.png" alt="" width="643" height="388" />
 <h2>8. Security Control Validation</h2>
 <h3>8.1 Windows Firewall</h3>
 Windows Firewall was confirmed as enabled across the Domain, Private, and Public profiles.
@@ -227,7 +230,7 @@ This demonstrated the difference between a network-based unauthenticated assessm
 
 <strong>Screenshot:</strong>
 
-[caption id="attachment_374" align="alignnone" width="640"]<img class="size-large wp-image-374" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-152926-1024x394.png" alt="" width="640" height="246" /> nessus-unauthenticated-scan-screenshot[/caption]
+<img class="alignnone wp-image-374 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-152926-1024x394.png" alt="" width="640" height="246" />
 <h3>9.2 Authenticated Nessus Assessment</h3>
 A separate authenticated Nessus assessment was configured for the Windows 11 workstation.
 
@@ -239,7 +242,7 @@ The authenticated scan provided substantially greater host visibility and identi
 
 <strong>Screenshot:</strong>
 
-[caption id="attachment_375" align="alignnone" width="640"]<img class="size-large wp-image-375" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-214009-1024x424.png" alt="" width="640" height="265" /> nessus-authenticated-scan-summary-screenshot[/caption]
+<img class="alignnone wp-image-375 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-214009-1024x424.png" alt="" width="640" height="265" />
 <h3>9.3 Key Vulnerabilities Identified</h3>
 The authenticated Nessus assessment identified vulnerabilities across the Windows operating system and installed applications.
 <h4>Mozilla Firefox</h4>
@@ -251,7 +254,7 @@ This represents one of the most significant risks identified during the assessme
 
 <strong>Screenshot:</strong>
 
-[caption id="attachment_376" align="alignnone" width="640"]<img class="size-large wp-image-376" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-220808-1024x454.png" alt="" width="640" height="284" /> firefox-critical-vulnerability-screenshot[/caption]
+<img class="alignnone wp-image-376 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-220808-1024x454.png" alt="" width="640" height="284" />
 <h4>VLC Media Player</h4>
 The workstation also contained <strong>VLC Media Player 2.2.1</strong>.
 
@@ -265,7 +268,7 @@ The Microsoft bulletin findings included Critical vulnerabilities with CVSS scor
 
 <strong>Screenshot:</strong>
 
-[caption id="attachment_377" align="alignnone" width="640"]<img class="wp-image-377 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-220828-1024x484.png" alt="" width="640" height="303" /> windows-security-bulletins-vulnerabilities-screenshot[/caption]
+<img class="alignnone wp-image-377 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-220828-1024x484.png" alt="" width="640" height="303" />
 <h3>Microsoft .NET Framework</h3>
 Nessus identified missing security updates affecting Microsoft .NET Framework components installed on the workstation.
 
@@ -279,7 +282,7 @@ Additional Medium and Low findings included Windows Package Manager, Windows Def
 
 The ICMP timestamp finding was reported with a <strong>CVSS score of 2.1 and Low severity</strong>.
 <h4>Top Vulnerabilities Found</h4>
-[caption id="attachment_378" align="alignnone" width="640"]<img class="size-large wp-image-378" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-230817-1024x601.png" alt="" width="640" height="376" /> Top-Vulnerabilities-found[/caption]
+<img class="alignnone wp-image-378 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-230817-1024x601.png" alt="" width="640" height="376" />
 <h3>9.4 Vulnerability Severity Summary</h3>
 The authenticated assessment produced the following severity distribution shown in Nessus:
 <table>
@@ -312,7 +315,7 @@ The findings were not treated as 482 individual vulnerabilities. Informational a
 
 <strong>Screenshot:</strong>
 
-[caption id="attachment_379" align="alignnone" width="640"]<img class="size-large wp-image-379" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-214009-1-1024x424.png" alt="" width="640" height="265" /> nessus-severity-summary[/caption]
+<img class="alignnone wp-image-379 size-large" src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-214009-1-1024x424.png" alt="" width="640" height="265" />
 <h2>10. Risk Assessment</h2>
 The identified findings were assessed using a qualitative 5 × 5 likelihood and impact model.
 
