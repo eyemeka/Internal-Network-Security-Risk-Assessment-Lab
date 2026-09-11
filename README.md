@@ -187,7 +187,6 @@ The scan identified:
 </table>
 These services represent part of the workstation's network attack surface.
 
-<strong>Screenshot:</strong>
 ![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20104639.png?raw=true)
 
 
@@ -195,7 +194,6 @@ After the firewall was restored, a focused scan showed these ports as filtered, 
 <pre><code class="language-bash">sudo nmap -sV -p 135,139,445 192.168.56.20
 </code></pre>
 
-<strong>Screenshot:</strong>
 ![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20154324.png?raw=true)
 
 ## <h2>8. Security Control Validation</h2> ##
@@ -224,7 +222,6 @@ SMBv1 being disabled is a positive security control because the legacy protocol 
 
 A focused Nmap SMB protocol check also showed TCP/445 as filtered while the firewall was enabled.
 
-<strong>Screenshot:</strong>
 ![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20154809.png?raw=true)
 
 ## <h2>9. Vulnerability Assessment</h2> ##
