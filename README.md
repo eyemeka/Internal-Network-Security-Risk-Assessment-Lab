@@ -154,11 +154,7 @@ The Windows host was identified with a VirtualBox virtual network adapter.
 </tbody>
 </table>
 
-<p align="center">
-  <img src="https://www.topbusiness.com.ng/wp-content/uploads/2026/09/Screenshot-2026-09-10-1026081.png"
-       alt="Nmap host discovery screenshot"
-       width="100%">
-</p>
+![image alt](https://github.com/eyemeka/ScreenShots/blob/main/Screenshot%202026-09-10%20102608.png?raw=true)
 
 ## <h2>7. Network and Service Enumeration</h2> ##
 Nmap was used to examine the services exposed by the Windows 11 workstation.
